@@ -1,0 +1,11 @@
+import React from 'react'
+
+function AddBusiness() {
+  return (
+    <div className="flex items-center justify-center h-screen text-2xl font-bold">
+      Add Business
+    </div>
+  )
+}
+
+export default AddBusiness
