@@ -8,10 +8,10 @@ import {
     MenubarTrigger,
   } from "@/components/ui/menubar"
   import ModeToggle from "@/components/nav/mode-toggle"
-import { MenubarSeparator } from "@radix-ui/react-menubar"
+import { MenubarSeparator } from "@/components/ui/menubar"
 import Image from "next/image";
 import Link from "next/link"
-import { SignIn, SignInButton, SignedIn, SignedOut, UserButton} from "@clerk/nextjs"
+import { SignInButton, SignedIn, SignedOut, UserButton} from "@clerk/nextjs"
 
 
 function TopNav() {
@@ -20,7 +20,7 @@ function TopNav() {
     <Menubar>
         <div className="flex-none">
             <MenubarMenu>
-                <Link href="/">
+                <Link href="/dashboard">
                 <Image src="/logo.svg" height={50} width={50} alt="logo image" />
                 </Link>
             </MenubarMenu>
@@ -28,8 +28,8 @@ function TopNav() {
 
         <div className="flex grow items-center justify-end gap-1">
         <MenubarMenu>
-            <MenubarTrigger className="text-base font-normal">
-                Dashboard
+            <MenubarTrigger asChild className="text-base font-normal">
+                <Link href="/dashboard">Dashboard</Link>
             </MenubarTrigger>
             <MenubarContent>
                 <MenubarItem>Task 1</MenubarItem>
